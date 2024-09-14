@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
     try {
       (async () => {
         const R = await fetch("/api");
-        const r = R.json();
+        const r = await R.json();
         console.log(r);
       })();
     } catch (error) {}
