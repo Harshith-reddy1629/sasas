@@ -10,6 +10,7 @@ export function middleware(req: NextRequest) {
   const response = NextResponse.next();
   // Add custom headers
   response.headers.set("X-Visitor-IP", ip);
+  response.headers.set("X-Visitor", JSON.stringify(req.geo));
   response.headers.set("X-Visitor-Country", country);
   return response;
 }
